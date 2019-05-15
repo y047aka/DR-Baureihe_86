@@ -10,10 +10,11 @@ img {
   top: 0;
   left: 0;
   z-index: -1;
-  height: 416.5px; }
+  display: none;
+  height: 833px; }
 
 svg {
-  stroke-width: 2; }
+  stroke-width: 1; }
   svg .boiler {
     fill: rgba(0, 0, 0, 0);
     stroke: #000; }
@@ -21,9 +22,13 @@ svg {
     fill: rgba(255, 255, 255, 0);
     stroke: #000; }
   svg .number-plate {
-    stroke: #000;
-    fill: rgba(168, 36, 36, 0); }
-  svg .fog-lamp {
-    fill: rgba(255, 255, 255, 0);
-    stroke: orange;
-    stroke-width: 1; }
+    fill: rgba(168, 36, 36, 0);
+    stroke: #000; }
+  svg .coupler {
+    stroke: #000; }
+    svg .coupler .frame {
+      fill: rgba(194, 10, 10, 0); }
+    svg .coupler .fog-lamp {
+      fill: rgba(255, 255, 255, 0); }
+    svg .coupler .buffer {
+      fill: rgba(204, 102, 51, 0); }

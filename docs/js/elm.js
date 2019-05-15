@@ -4976,8 +4976,69 @@ var author$project$Main$boiler = function () {
 				_List_Nil)
 			]));
 }();
-var author$project$Main$fogLamp = function (centerX) {
+var author$project$Main$L = {$: 'L'};
+var author$project$Main$R = {$: 'R'};
+var elm$core$Basics$negate = function (n) {
+	return -n;
+};
+var author$project$Main$buffer = function (rl) {
+	var sign = function () {
+		if (rl.$ === 'R') {
+			return 1;
+		} else {
+			return -1;
+		}
+	}();
+	var centerY = 3100;
+	var centerX = 825 * sign;
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['buffer']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$circle,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(205)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$circle,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(190)
+					]),
+				_List_Nil)
+			]));
+};
+var author$project$Main$buffers = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			author$project$Main$buffer(author$project$Main$L),
+			author$project$Main$buffer(author$project$Main$R)
+		]));
+var author$project$Main$fogLamp = function (rl) {
+	var sign = function () {
+		if (rl.$ === 'R') {
+			return 1;
+		} else {
+			return -1;
+		}
+	}();
 	var centerY = 2590;
+	var centerX = 825 * sign;
 	return A2(
 		elm_community$typed_svg$TypedSvg$g,
 		_List_fromArray(
@@ -4994,7 +5055,7 @@ var author$project$Main$fogLamp = function (centerX) {
 					[
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(150)
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(140)
 					]),
 				_List_Nil),
 				A2(
@@ -5003,7 +5064,7 @@ var author$project$Main$fogLamp = function (centerX) {
 					[
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(120)
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(110)
 					]),
 				_List_Nil),
 				A2(
@@ -5012,148 +5073,19 @@ var author$project$Main$fogLamp = function (centerX) {
 					[
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
 						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(90)
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(100)
 					]),
 				_List_Nil)
 			]));
-};
-var elm$core$Basics$negate = function (n) {
-	return -n;
 };
 var author$project$Main$fogLamps = A2(
 	elm_community$typed_svg$TypedSvg$g,
 	_List_Nil,
 	_List_fromArray(
 		[
-			author$project$Main$fogLamp(820),
-			author$project$Main$fogLamp(-820)
+			author$project$Main$fogLamp(author$project$Main$L),
+			author$project$Main$fogLamp(author$project$Main$R)
 		]));
-var author$project$Main$headLight = function () {
-	var centerY = 980;
-	var centerX = 0;
-	return A2(
-		elm_community$typed_svg$TypedSvg$g,
-		_List_fromArray(
-			[
-				elm_community$typed_svg$TypedSvg$Attributes$class(
-				_List_fromArray(
-					['head-light']))
-			]),
-		_List_fromArray(
-			[
-				A2(
-				elm_community$typed_svg$TypedSvg$circle,
-				_List_fromArray(
-					[
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(150)
-					]),
-				_List_Nil),
-				A2(
-				elm_community$typed_svg$TypedSvg$circle,
-				_List_fromArray(
-					[
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(120)
-					]),
-				_List_Nil),
-				A2(
-				elm_community$typed_svg$TypedSvg$circle,
-				_List_fromArray(
-					[
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(90)
-					]),
-				_List_Nil)
-			]));
-}();
-var elm_community$typed_svg$TypedSvg$rect = elm_community$typed_svg$TypedSvg$Core$node('rect');
-var elm_community$typed_svg$TypedSvg$Attributes$height = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'height',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$height = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$height(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$width = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'width',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$width = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$width(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$x = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'x',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$x = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$x(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$y = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'y',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$y = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$y(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var author$project$Main$numberPlate = function () {
-	var w = 650;
-	var h = 180;
-	var cy = 1510 - (h / 2);
-	var cx = -(w / 2);
-	return A2(
-		elm_community$typed_svg$TypedSvg$g,
-		_List_fromArray(
-			[
-				elm_community$typed_svg$TypedSvg$Attributes$class(
-				_List_fromArray(
-					['number-plate']))
-			]),
-		_List_fromArray(
-			[
-				A2(
-				elm_community$typed_svg$TypedSvg$rect,
-				_List_fromArray(
-					[
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(cx),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cy),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(h)
-					]),
-				_List_Nil)
-			]));
-}();
-var elm$html$Html$img = _VirtualDom_node('img');
-var elm$json$Json$Encode$string = _Json_wrap;
-var elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			elm$json$Json$Encode$string(string));
-	});
-var elm$html$Html$Attributes$src = function (url) {
-	return A2(
-		elm$html$Html$Attributes$stringProperty,
-		'src',
-		_VirtualDom_noJavaScriptOrHtmlUri(url));
-};
-var elm_community$typed_svg$TypedSvg$svg = elm_community$typed_svg$TypedSvg$Core$node('svg');
 var elm$core$List$foldrHelper = F4(
 	function (fn, acc, ctr, ls) {
 		if (!ls.b) {
@@ -5223,6 +5155,212 @@ var elm$core$List$map = F2(
 			_List_Nil,
 			xs);
 	});
+var elm_community$typed_svg$TypedSvg$rect = elm_community$typed_svg$TypedSvg$Core$node('rect');
+var elm_community$typed_svg$TypedSvg$Attributes$height = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'height',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$height = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$height(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$width = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'width',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$width = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$width(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$x = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'x',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$x = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$x(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$y = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'y',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$y = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$y(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var author$project$Main$frame = function () {
+	var w = 2140;
+	var h = 370;
+	var centerY = 3080 - (h / 2);
+	var centerX = -(w / 2);
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['frame']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(h)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(30)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				A2(
+					elm$core$List$map,
+					function (d) {
+						return A2(
+							elm_community$typed_svg$TypedSvg$g,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									elm_community$typed_svg$TypedSvg$circle,
+									_List_fromArray(
+										[
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(d),
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY + 120),
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$r(15)
+										]),
+									_List_Nil),
+									A2(
+									elm_community$typed_svg$TypedSvg$circle,
+									_List_fromArray(
+										[
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(d),
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY + 290),
+											elm_community$typed_svg$TypedSvg$Attributes$InPx$r(15)
+										]),
+									_List_Nil)
+								]));
+					},
+					_List_fromArray(
+						[-380, -110, 110, 380])))
+			]));
+}();
+var author$project$Main$coupler = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_fromArray(
+		[
+			elm_community$typed_svg$TypedSvg$Attributes$class(
+			_List_fromArray(
+				['coupler']))
+		]),
+	_List_fromArray(
+		[author$project$Main$frame, author$project$Main$fogLamps, author$project$Main$buffers]));
+var author$project$Main$headLight = function () {
+	var centerY = 980;
+	var centerX = 0;
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['head-light']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$circle,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(150)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$circle,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(120)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$circle,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$r(90)
+					]),
+				_List_Nil)
+			]));
+}();
+var author$project$Main$numberPlate = function () {
+	var w = 650;
+	var h = 180;
+	var cy = 1510 - (h / 2);
+	var cx = -(w / 2);
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['number-plate']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(cx),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(cy),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(h)
+					]),
+				_List_Nil)
+			]));
+}();
+var elm$html$Html$img = _VirtualDom_node('img');
+var elm$json$Json$Encode$string = _Json_wrap;
+var elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			elm$json$Json$Encode$string(string));
+	});
+var elm$html$Html$Attributes$src = function (url) {
+	return A2(
+		elm$html$Html$Attributes$stringProperty,
+		'src',
+		_VirtualDom_noJavaScriptOrHtmlUri(url));
+};
+var elm_community$typed_svg$TypedSvg$svg = elm_community$typed_svg$TypedSvg$Core$node('svg');
 var elm_community$typed_svg$TypedSvg$Attributes$viewBox = F4(
 	function (minX, minY, vWidth, vHeight) {
 		return A2(
@@ -5252,12 +5390,12 @@ var author$project$Main$view = function (model) {
 				elm_community$typed_svg$TypedSvg$svg,
 				_List_fromArray(
 					[
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(322),
-						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(416.5),
-						A4(elm_community$typed_svg$TypedSvg$Attributes$viewBox, -1610, 0, 3220, 4165)
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(644),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(833),
+						A4(elm_community$typed_svg$TypedSvg$Attributes$viewBox, -1605, 0, 3210, 4165)
 					]),
 				_List_fromArray(
-					[author$project$Main$boiler, author$project$Main$headLight, author$project$Main$numberPlate, author$project$Main$fogLamps]))
+					[author$project$Main$boiler, author$project$Main$headLight, author$project$Main$numberPlate, author$project$Main$coupler]))
 			]),
 		title: 'DR-Baureihe 86'
 	};

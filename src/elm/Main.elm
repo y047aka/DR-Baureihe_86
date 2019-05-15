@@ -22,6 +22,11 @@ type alias Model =
     { userState : String }
 
 
+type RL
+    = R
+    | L
+
+
 init : () -> ( Model, Cmd Msg )
 init _ =
     ( Model ""
@@ -46,14 +51,14 @@ view model =
     , body =
         [ img [ src "./images/base.png" ] []
         , svg
-            [ width 322
-            , height 416.5
-            , viewBox -1610 0 3220 4165
+            [ width 644
+            , height 833
+            , viewBox -1605 0 3210 4165
             ]
             [ boiler
             , headLight
             , numberPlate
-            , fogLamps
+            , coupler
             ]
         ]
     }
@@ -114,22 +119,109 @@ numberPlate =
         ]
 
 
-fogLamps : Svg msg
-fogLamps =
-    g []
-        [ fogLamp 820
-        , fogLamp -820
+
+-- COUPLER
+
+
+coupler : Svg msg
+coupler =
+    g [ class [ "coupler" ] ]
+        [ frame
+        , fogLamps
+        , buffers
         ]
 
 
-fogLamp : Float -> Svg msg
-fogLamp centerX =
+frame : Svg msg
+frame =
     let
+        w =
+            2140
+
+        h =
+            370
+
+        centerX =
+            -(w / 2)
+
+        centerY =
+            3080 - (h / 2)
+    in
+    g [ class [ "frame" ] ]
+        [ rect [ x centerX, y centerY, width w, height h ] []
+        , rect [ x centerX, y centerY, width w, height 30 ] []
+        , g
+            []
+            ([ -380, -110, 110, 380 ]
+                |> List.map
+                    (\d ->
+                        g []
+                            [ circle [ cx d, cy (centerY + 120), r 15 ] []
+                            , circle [ cx d, cy (centerY + 290), r 15 ] []
+                            ]
+                    )
+            )
+        ]
+
+
+fogLamps : Svg msg
+fogLamps =
+    g []
+        [ fogLamp L
+        , fogLamp R
+        ]
+
+
+fogLamp : RL -> Svg msg
+fogLamp rl =
+    let
+        sign =
+            case rl of
+                R ->
+                    1
+
+                L ->
+                    -1
+
+        centerX =
+            825 * sign
+
         centerY =
             2590
     in
     g [ class [ "fog-lamp" ] ]
-        [ circle [ cx centerX, cy centerY, r 150 ] []
-        , circle [ cx centerX, cy centerY, r 120 ] []
-        , circle [ cx centerX, cy centerY, r 90 ] []
+        [ circle [ cx centerX, cy centerY, r 140 ] []
+        , circle [ cx centerX, cy centerY, r 110 ] []
+        , circle [ cx centerX, cy centerY, r 100 ] []
+        ]
+
+
+buffers : Svg msg
+buffers =
+    g []
+        [ buffer L
+        , buffer R
+        ]
+
+
+buffer : RL -> Svg msg
+buffer rl =
+    let
+        sign =
+            case rl of
+                R ->
+                    1
+
+                L ->
+                    -1
+
+        centerX =
+            825 * sign
+
+        centerY =
+            3100
+    in
+    g [ class [ "buffer" ] ]
+        [ circle [ cx centerX, cy centerY, r 205 ] []
+        , circle [ cx centerX, cy centerY, r 190 ] []
         ]
