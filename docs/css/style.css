@@ -14,21 +14,16 @@ img {
   height: 833px; }
 
 svg {
-  stroke-width: 1; }
-  svg .boiler {
-    fill: rgba(0, 0, 0, 0);
-    stroke: #000; }
+  fill: #333;
+  stroke-width: 1;
+  stroke: orange; }
   svg .head-light * {
-    fill: rgba(255, 255, 255, 0);
-    stroke: #000; }
+    fill: white; }
   svg .number-plate {
-    fill: rgba(168, 36, 36, 0);
-    stroke: #000; }
-  svg .coupler {
-    stroke: #000; }
-    svg .coupler .frame {
-      fill: rgba(194, 10, 10, 0); }
-    svg .coupler .fog-lamp {
-      fill: rgba(255, 255, 255, 0); }
-    svg .coupler .buffer {
-      fill: rgba(204, 102, 51, 0); }
+    fill: #a82424; }
+  svg .coupler .frame {
+    fill: #c20a0a; }
+  svg .coupler .fog-lamp {
+    fill: white; }
+  svg .coupler .buffer {
+    fill: #cc6633; }

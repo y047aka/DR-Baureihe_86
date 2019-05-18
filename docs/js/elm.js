@@ -4799,6 +4799,9 @@ var author$project$Main$update = F2(
 	function (msg, model) {
 		return _Utils_Tuple2(model, elm$core$Platform$Cmd$none);
 	});
+var elm$core$Basics$negate = function (n) {
+	return -n;
+};
 var elm$core$Basics$identity = function (x) {
 	return x;
 };
@@ -4822,8 +4825,8 @@ var elm$virtual_dom$VirtualDom$nodeNS = function (tag) {
 		_VirtualDom_noScript(tag));
 };
 var elm_community$typed_svg$TypedSvg$Core$node = elm$virtual_dom$VirtualDom$nodeNS('http://www.w3.org/2000/svg');
-var elm_community$typed_svg$TypedSvg$circle = elm_community$typed_svg$TypedSvg$Core$node('circle');
 var elm_community$typed_svg$TypedSvg$g = elm_community$typed_svg$TypedSvg$Core$node('g');
+var elm_community$typed_svg$TypedSvg$rect = elm_community$typed_svg$TypedSvg$Core$node('rect');
 var elm$virtual_dom$VirtualDom$attribute = F2(
 	function (key, value) {
 		return A2(
@@ -4832,12 +4835,6 @@ var elm$virtual_dom$VirtualDom$attribute = F2(
 			_VirtualDom_noJavaScriptOrHtmlUri(value));
 	});
 var elm_community$typed_svg$TypedSvg$Core$attribute = elm$virtual_dom$VirtualDom$attribute;
-var elm_community$typed_svg$TypedSvg$Attributes$class = function (names) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'class',
-		A2(elm$core$String$join, ' ', names));
-};
 var elm$core$String$fromFloat = _String_fromNumber;
 var elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString = function (length) {
 	switch (length.$) {
@@ -4873,16 +4870,82 @@ var elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString = function (l
 			return elm$core$String$fromFloat(x) + 'px';
 	}
 };
-var elm_community$typed_svg$TypedSvg$Attributes$cx = function (length) {
+var elm_community$typed_svg$TypedSvg$Attributes$height = function (length) {
 	return A2(
 		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'cx',
+		'height',
 		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
 };
 var elm_community$typed_svg$TypedSvg$Types$Px = function (a) {
 	return {$: 'Px', a: a};
 };
 var elm_community$typed_svg$TypedSvg$Types$px = elm_community$typed_svg$TypedSvg$Types$Px;
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$height = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$height(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$width = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'width',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$width = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$width(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$x = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'x',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$x = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$x(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$y = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'y',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$y = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$y(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var author$project$Main$body = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			function () {
+			var w = 2920;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(1500),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(1020)
+					]),
+				_List_Nil);
+		}()
+		]));
+var elm_community$typed_svg$TypedSvg$circle = elm_community$typed_svg$TypedSvg$Core$node('circle');
+var elm_community$typed_svg$TypedSvg$Attributes$class = function (names) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'class',
+		A2(elm$core$String$join, ' ', names));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$cx = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'cx',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
 var elm_community$typed_svg$TypedSvg$Attributes$InPx$cx = function (value) {
 	return elm_community$typed_svg$TypedSvg$Attributes$cx(
 		elm_community$typed_svg$TypedSvg$Types$px(value));
@@ -4976,11 +5039,270 @@ var author$project$Main$boiler = function () {
 				_List_Nil)
 			]));
 }();
+var elm_community$typed_svg$TypedSvg$polygon = elm_community$typed_svg$TypedSvg$Core$node('polygon');
+var elm$core$List$foldrHelper = F4(
+	function (fn, acc, ctr, ls) {
+		if (!ls.b) {
+			return acc;
+		} else {
+			var a = ls.a;
+			var r1 = ls.b;
+			if (!r1.b) {
+				return A2(fn, a, acc);
+			} else {
+				var b = r1.a;
+				var r2 = r1.b;
+				if (!r2.b) {
+					return A2(
+						fn,
+						a,
+						A2(fn, b, acc));
+				} else {
+					var c = r2.a;
+					var r3 = r2.b;
+					if (!r3.b) {
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(fn, c, acc)));
+					} else {
+						var d = r3.a;
+						var r4 = r3.b;
+						var res = (ctr > 500) ? A3(
+							elm$core$List$foldl,
+							fn,
+							acc,
+							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
+						return A2(
+							fn,
+							a,
+							A2(
+								fn,
+								b,
+								A2(
+									fn,
+									c,
+									A2(fn, d, res))));
+					}
+				}
+			}
+		}
+	});
+var elm$core$List$foldr = F3(
+	function (fn, acc, ls) {
+		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
+	});
+var elm$core$List$map = F2(
+	function (f, xs) {
+		return A3(
+			elm$core$List$foldr,
+			F2(
+				function (x, acc) {
+					return A2(
+						elm$core$List$cons,
+						f(x),
+						acc);
+				}),
+			_List_Nil,
+			xs);
+	});
+var elm_community$typed_svg$TypedSvg$Attributes$points = function (pts) {
+	var pointToString = function (_n0) {
+		var xx = _n0.a;
+		var yy = _n0.b;
+		return elm$core$String$fromFloat(xx) + (', ' + elm$core$String$fromFloat(yy));
+	};
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'points',
+		A2(
+			elm$core$String$join,
+			' ',
+			A2(elm$core$List$map, pointToString, pts)));
+};
+var author$project$Main$cabin = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			elm_community$typed_svg$TypedSvg$polygon,
+			_List_fromArray(
+				[
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$x(100),
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$y(1500),
+					elm_community$typed_svg$TypedSvg$Attributes$points(
+					_List_fromArray(
+						[
+							_Utils_Tuple2(-1460, 1500),
+							_Utils_Tuple2(-1250, 600),
+							_Utils_Tuple2(-1060, 380),
+							_Utils_Tuple2(-550, 200),
+							_Utils_Tuple2(-150, 150),
+							_Utils_Tuple2(150, 150),
+							_Utils_Tuple2(550, 200),
+							_Utils_Tuple2(1060, 380),
+							_Utils_Tuple2(1250, 600),
+							_Utils_Tuple2(1460, 1500)
+						]))
+				]),
+			_List_Nil)
+		]));
 var author$project$Main$L = {$: 'L'};
 var author$project$Main$R = {$: 'R'};
-var elm$core$Basics$negate = function (n) {
-	return -n;
+var author$project$Main$wheel = function (rl) {
+	var sign = function () {
+		if (rl.$ === 'R') {
+			return 1;
+		} else {
+			return -1;
+		}
+	}();
+	var centerY = 3200;
+	var centerX = 650 * sign;
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['wheel']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(centerX),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(centerY),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(150),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(890)
+					]),
+				_List_Nil),
+				A2(
+				elm_community$typed_svg$TypedSvg$polygon,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$points(
+						_List_fromArray(
+							[
+								_Utils_Tuple2(620, 3125),
+								_Utils_Tuple2(650, 3200),
+								_Utils_Tuple2(650, 4090),
+								_Utils_Tuple2(620, 4165)
+							]))
+					]),
+				_List_Nil)
+			]));
 };
+var author$project$Main$chassis = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			function () {
+			var w = 1050;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(3265),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(600)
+					]),
+				_List_Nil);
+		}(),
+			author$project$Main$wheel(author$project$Main$R),
+			author$project$Main$wheel(author$project$Main$L)
+		]));
+var elm_community$typed_svg$TypedSvg$Attributes$rx = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'rx',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$rx = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$rx(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$ry = function (length) {
+	return A2(
+		elm_community$typed_svg$TypedSvg$Core$attribute,
+		'ry',
+		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
+};
+var elm_community$typed_svg$TypedSvg$Attributes$InPx$ry = function (value) {
+	return elm_community$typed_svg$TypedSvg$Attributes$ry(
+		elm_community$typed_svg$TypedSvg$Types$px(value));
+};
+var author$project$Main$chimney = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_fromArray(
+		[
+			elm_community$typed_svg$TypedSvg$Attributes$class(
+			_List_fromArray(
+				['chimney']))
+		]),
+	_List_fromArray(
+		[
+			function () {
+			var w = 460;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(115),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(35),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$rx(20),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$ry(20)
+					]),
+				_List_Nil);
+		}(),
+			A2(
+			elm_community$typed_svg$TypedSvg$polygon,
+			_List_fromArray(
+				[
+					elm_community$typed_svg$TypedSvg$Attributes$points(
+					_List_fromArray(
+						[
+							_Utils_Tuple2(215, 150),
+							_Utils_Tuple2(200, 730),
+							_Utils_Tuple2(-200, 730),
+							_Utils_Tuple2(-215, 150)
+						]))
+				]),
+			_List_Nil),
+			function () {
+			var w = 1260;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(730),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(460)
+					]),
+				_List_Nil);
+		}(),
+			A2(
+			elm_community$typed_svg$TypedSvg$rect,
+			_List_fromArray(
+				[
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-750),
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$y(730),
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$width(120),
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$height(460)
+				]),
+			_List_Nil)
+		]));
 var author$project$Main$buffer = function (rl) {
 	var sign = function () {
 		if (rl.$ === 'R') {
@@ -5086,116 +5408,6 @@ var author$project$Main$fogLamps = A2(
 			author$project$Main$fogLamp(author$project$Main$L),
 			author$project$Main$fogLamp(author$project$Main$R)
 		]));
-var elm$core$List$foldrHelper = F4(
-	function (fn, acc, ctr, ls) {
-		if (!ls.b) {
-			return acc;
-		} else {
-			var a = ls.a;
-			var r1 = ls.b;
-			if (!r1.b) {
-				return A2(fn, a, acc);
-			} else {
-				var b = r1.a;
-				var r2 = r1.b;
-				if (!r2.b) {
-					return A2(
-						fn,
-						a,
-						A2(fn, b, acc));
-				} else {
-					var c = r2.a;
-					var r3 = r2.b;
-					if (!r3.b) {
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(fn, c, acc)));
-					} else {
-						var d = r3.a;
-						var r4 = r3.b;
-						var res = (ctr > 500) ? A3(
-							elm$core$List$foldl,
-							fn,
-							acc,
-							elm$core$List$reverse(r4)) : A4(elm$core$List$foldrHelper, fn, acc, ctr + 1, r4);
-						return A2(
-							fn,
-							a,
-							A2(
-								fn,
-								b,
-								A2(
-									fn,
-									c,
-									A2(fn, d, res))));
-					}
-				}
-			}
-		}
-	});
-var elm$core$List$foldr = F3(
-	function (fn, acc, ls) {
-		return A4(elm$core$List$foldrHelper, fn, acc, 0, ls);
-	});
-var elm$core$List$map = F2(
-	function (f, xs) {
-		return A3(
-			elm$core$List$foldr,
-			F2(
-				function (x, acc) {
-					return A2(
-						elm$core$List$cons,
-						f(x),
-						acc);
-				}),
-			_List_Nil,
-			xs);
-	});
-var elm_community$typed_svg$TypedSvg$rect = elm_community$typed_svg$TypedSvg$Core$node('rect');
-var elm_community$typed_svg$TypedSvg$Attributes$height = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'height',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$height = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$height(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$width = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'width',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$width = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$width(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$x = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'x',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$x = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$x(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$y = function (length) {
-	return A2(
-		elm_community$typed_svg$TypedSvg$Core$attribute,
-		'y',
-		elm_community$typed_svg$TypedSvg$TypesToStrings$lengthToString(length));
-};
-var elm_community$typed_svg$TypedSvg$Attributes$InPx$y = function (value) {
-	return elm_community$typed_svg$TypedSvg$Attributes$y(
-		elm_community$typed_svg$TypedSvg$Types$px(value));
-};
 var author$project$Main$frame = function () {
 	var w = 2140;
 	var h = 370;
@@ -5276,6 +5488,223 @@ var author$project$Main$coupler = A2(
 		]),
 	_List_fromArray(
 		[author$project$Main$frame, author$project$Main$fogLamps, author$project$Main$buffers]));
+var author$project$Main$cylinder = function (rl) {
+	var smallCenterY = 2840;
+	var sign = function () {
+		if (rl.$ === 'R') {
+			return 1;
+		} else {
+			return -1;
+		}
+	}();
+	var smallCenterX = 1350 * sign;
+	var largeCenterY = 3410;
+	var largeCenterX = 1175 * sign;
+	return A2(
+		elm_community$typed_svg$TypedSvg$g,
+		_List_fromArray(
+			[
+				elm_community$typed_svg$TypedSvg$Attributes$class(
+				_List_fromArray(
+					['cylinder']))
+			]),
+		_List_fromArray(
+			[
+				A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(largeCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(largeCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(340)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(largeCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(largeCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(255)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(largeCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(largeCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(130)
+							]),
+						_List_Nil)
+					])),
+				A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(smallCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(smallCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(200)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(smallCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(smallCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(150)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$circle,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cx(smallCenterX),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$cy(smallCenterY),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$r(55)
+							]),
+						_List_Nil)
+					]))
+			]));
+};
+var author$project$Main$cylinders = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			author$project$Main$cylinder(author$project$Main$L),
+			author$project$Main$cylinder(author$project$Main$R)
+		]));
+var author$project$Main$deck = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			A2(
+			elm_community$typed_svg$TypedSvg$polygon,
+			_List_fromArray(
+				[
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$x(100),
+					elm_community$typed_svg$TypedSvg$Attributes$InPx$y(1500),
+					elm_community$typed_svg$TypedSvg$Attributes$points(
+					_List_fromArray(
+						[
+							_Utils_Tuple2(380, 2200),
+							_Utils_Tuple2(380, 2300),
+							_Utils_Tuple2(710, 2300),
+							_Utils_Tuple2(1000, 2200),
+							_Utils_Tuple2(1290, 2200),
+							_Utils_Tuple2(1290, 2250),
+							_Utils_Tuple2(710, 2450),
+							_Utils_Tuple2(-710, 2450),
+							_Utils_Tuple2(-1290, 2250),
+							_Utils_Tuple2(-1290, 2200),
+							_Utils_Tuple2(-1000, 2200),
+							_Utils_Tuple2(-710, 2300),
+							_Utils_Tuple2(-380, 2300),
+							_Utils_Tuple2(-380, 2200)
+						]))
+				]),
+			_List_Nil),
+			function () {
+			var w = 580;
+			return A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x(1150 - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2140),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(60)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x((-1150) - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2140),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(60)
+							]),
+						_List_Nil)
+					]));
+		}(),
+			function () {
+			var w = 620;
+			return A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x(1150 - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2110),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(30)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x((-1150) - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2110),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(30)
+							]),
+						_List_Nil)
+					]));
+		}(),
+			function () {
+			var w = 40;
+			return A2(
+				elm_community$typed_svg$TypedSvg$g,
+				_List_Nil,
+				_List_fromArray(
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x(465 - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2170),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(725)
+							]),
+						_List_Nil),
+						A2(
+						elm_community$typed_svg$TypedSvg$rect,
+						_List_fromArray(
+							[
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$x((-465) - (w / 2)),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$y(2170),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+								elm_community$typed_svg$TypedSvg$Attributes$InPx$height(725)
+							]),
+						_List_Nil)
+					]));
+		}()
+		]));
 var author$project$Main$headLight = function () {
 	var centerY = 980;
 	var centerX = 0;
@@ -5345,6 +5774,68 @@ var author$project$Main$numberPlate = function () {
 				_List_Nil)
 			]));
 }();
+var author$project$Main$steamHeader = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_fromArray(
+		[
+			elm_community$typed_svg$TypedSvg$Attributes$class(
+			_List_fromArray(
+				['chimney']))
+		]),
+	_List_fromArray(
+		[
+			function () {
+			var w = 620;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(200),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(700),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$rx(310),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$ry(160)
+					]),
+				_List_Nil);
+		}()
+		]));
+var author$project$Main$windows = A2(
+	elm_community$typed_svg$TypedSvg$g,
+	_List_Nil,
+	_List_fromArray(
+		[
+			function () {
+			var w = 1390;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(305),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(200),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$rx(100),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$ry(100)
+					]),
+				_List_Nil);
+		}(),
+			function () {
+			var w = 1320;
+			return A2(
+				elm_community$typed_svg$TypedSvg$rect,
+				_List_fromArray(
+					[
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$x(-(w / 2)),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$y(340),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$width(w),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$height(130),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$rx(65),
+						elm_community$typed_svg$TypedSvg$Attributes$InPx$ry(65)
+					]),
+				_List_Nil);
+		}()
+		]));
 var elm$html$Html$img = _VirtualDom_node('img');
 var elm$json$Json$Encode$string = _Json_wrap;
 var elm$html$Html$Attributes$stringProperty = F2(
@@ -5395,7 +5886,23 @@ var author$project$Main$view = function (model) {
 						A4(elm_community$typed_svg$TypedSvg$Attributes$viewBox, -1605, 0, 3210, 4165)
 					]),
 				_List_fromArray(
-					[author$project$Main$boiler, author$project$Main$headLight, author$project$Main$numberPlate, author$project$Main$coupler]))
+					[
+						A2(
+						elm_community$typed_svg$TypedSvg$g,
+						_List_Nil,
+						_List_fromArray(
+							[author$project$Main$chassis, author$project$Main$cabin, author$project$Main$body, author$project$Main$deck, author$project$Main$windows])),
+						A2(
+						elm_community$typed_svg$TypedSvg$g,
+						_List_Nil,
+						_List_fromArray(
+							[author$project$Main$steamHeader, author$project$Main$chimney, author$project$Main$boiler, author$project$Main$cylinders])),
+						A2(
+						elm_community$typed_svg$TypedSvg$g,
+						_List_Nil,
+						_List_fromArray(
+							[author$project$Main$headLight, author$project$Main$numberPlate, author$project$Main$coupler]))
+					]))
 			]),
 		title: 'DR-Baureihe 86'
 	};
